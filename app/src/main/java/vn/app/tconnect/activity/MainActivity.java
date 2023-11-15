@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity  {
                                 rcmAdapter.notifyDataSetChanged();
                             }
                         } else {
-                            Toast.makeText(getParent(),"Error"+task.getException(),Toast.LENGTH_SHORT);
+                            Toast.makeText(getParent(),"Lỗi"+task.getException(),Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -153,44 +153,16 @@ public class MainActivity extends AppCompatActivity  {
         menu.setOnClickListener(view -> openDrawer(drawerLayout));
         home.setOnClickListener(view -> recreate());
         mouse.setOnClickListener(view -> redirectActivity(MainActivity.this,ChuotActivity.class));
-        keyboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, BanphimActivity.class);
-            }
-        });
-        monitor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, ManhinhActivity.class);
-            }
-        });
-        headset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, TaingheActivity.class);
-            }
-        });
-        laptop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this, LaptopActivity.class);
-            }
-        });
+        keyboard.setOnClickListener(view -> redirectActivity(MainActivity.this, BanphimActivity.class));
+        monitor.setOnClickListener(view -> redirectActivity(MainActivity.this, ManhinhActivity.class));
+        headset.setOnClickListener(view -> redirectActivity(MainActivity.this, TaingheActivity.class));
+        laptop.setOnClickListener(view -> redirectActivity(MainActivity.this, LaptopActivity.class));
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                auth.signOut();
-                redirectActivity(MainActivity.this,LoginActivity.class);
-            }
+        logout.setOnClickListener(view -> {
+            auth.signOut();
+            redirectActivity(MainActivity.this,LoginActivity.class);
         });
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(MainActivity.this,ProfileActivity.class);
-            }
-        });
+        profile.setOnClickListener(view -> redirectActivity(MainActivity.this,ProfileActivity.class));
     }
 
     public static void openDrawer(DrawerLayout drawerLayout){

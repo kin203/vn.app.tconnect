@@ -1,11 +1,9 @@
 package vn.app.tconnect.activity;
 
-import static vn.app.tconnect.activity.MainActivity.redirectActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -31,24 +29,17 @@ public class ChuotActivity extends AppCompatActivity {
     private ChuotAdapter chuotAdapter;
     private FirebaseFirestore db;
     RecyclerView chuotRec;
-    TextView back;
-
+    ImageView home,noti,favorite,cart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chuot);
         db =FirebaseFirestore.getInstance();
+        home= findViewById(R.id.footer_home);
+        noti = findViewById(R.id.footer_notification);
+        favorite = findViewById(R.id.footer_favorite);
+        cart= findViewById(R.id.footer_cart);
         chuotRec=findViewById(R.id.chuot_Rec);
-        back=findViewById(R.id.backbutton);
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                redirectActivity(ChuotActivity.this, MainActivity.class);
-            }
-        });
-
-
 
         chuotRec.setLayoutManager(new GridLayoutManager(this, 2));
         chuotModelList= new ArrayList<>();
@@ -71,6 +62,33 @@ public class ChuotActivity extends AppCompatActivity {
                         }
                     }
                 });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChuotActivity.this,MainActivity.class));
+            }
+        });
+
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChuotActivity.this,MainActivity.class));
+            }
+        });
+
+        noti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChuotActivity.this,MainActivity.class));
+            }
+        });
+
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChuotActivity.this,GiohangActivity.class));
+            }
+        });
     }
     @Override
     public void onBackPressed() {
