@@ -85,17 +85,9 @@ public class MainActivity extends AppCompatActivity  {
 
         progressBar.setVisibility(View.VISIBLE);
 
-        if (user != null) {
             // Lấy tên hiển thị của người dùng
             String displayName = user.getDisplayName();
-
-            // Hiển thị thông báo chào mừng
-            if (displayName != null && !displayName.isEmpty()) {
-                hello.setText("Xin chào " + displayName + " !");
-            } else {
-                hello.setText("Xin chào");
-            }
-        }
+            hello.setText("Xin chào " + displayName + " !");
 
         //Flash sale item
         flashRec.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
