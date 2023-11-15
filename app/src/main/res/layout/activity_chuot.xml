@@ -19,11 +19,12 @@
             android:background="#fff"
             android:padding="10dp">
             <TextView
-                android:id="@+id/txtChuot"
+                android:id="@+id/backbutton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/baseline_arrow_back_24"
                 android:text="Chuột "
+                android:clickable="true"
                 android:textAlignment="center"
                 android:padding="10dp"
                 android:textSize="30sp"

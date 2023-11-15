@@ -1,6 +1,11 @@
 package vn.app.tconnect.activity;
 
+import static vn.app.tconnect.activity.MainActivity.redirectActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +31,7 @@ public class TaingheActivity extends AppCompatActivity {
     private TaiNgheAdapter taiNgheAdapter;
     private FirebaseFirestore db;
     RecyclerView taiNgheRec;
+    TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,14 @@ public class TaingheActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tainghe);
         db =FirebaseFirestore.getInstance();
         taiNgheRec=findViewById(R.id.tainghe_Rec);
+        back=findViewById(R.id.backbutton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(TaingheActivity.this, MainActivity.class);
+            }
+        });
 
         taiNgheRec.setLayoutManager(new GridLayoutManager(this, 2));
         taiNgheModelList= new ArrayList<>();
@@ -54,5 +68,12 @@ public class TaingheActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(TaingheActivity.this, MainActivity.class));
+        finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

@@ -1,6 +1,12 @@
 package vn.app.tconnect.activity;
 
+import static vn.app.tconnect.activity.MainActivity.redirectActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +32,7 @@ public class BanphimActivity extends AppCompatActivity {
     private BanPhimAdapter banPhimAdapter;
     private FirebaseFirestore db;
     RecyclerView banPhimRec;
+    TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,14 @@ public class BanphimActivity extends AppCompatActivity {
         setContentView(R.layout.activity_banphim);
         db =FirebaseFirestore.getInstance();
         banPhimRec=findViewById(R.id.banphim_Rec);
+        back=findViewById(R.id.backbutton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(BanphimActivity.this, MainActivity.class);
+            }
+        });
 
         banPhimRec.setLayoutManager(new GridLayoutManager(this, 2));
         banPhimModelList= new ArrayList<>();
@@ -55,5 +70,12 @@ public class BanphimActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(BanphimActivity.this, MainActivity.class));
+        finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

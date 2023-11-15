@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView userImage;
     AppCompatButton logOut, backToMain, accountSetting, editLocation;
     FirebaseUser user;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,8 @@ public class ProfileActivity extends AppCompatActivity {
         backToMain = findViewById(R.id.backtoMain);
         accountSetting = findViewById(R.id.btn_acc_setting);
         editLocation = findViewById(R.id.btn_location);
-
+        progressBar =findViewById(R.id.progessbar);
+        progressBar.setVisibility(View.VISIBLE);
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         name.setText((user.getDisplayName()));
@@ -53,9 +56,9 @@ public class ProfileActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     String imageUri = dataSnapshot.getValue(String.class);
-
                     // Load ảnh từ đường dẫn và hiển thị bằng Glide
                     Glide.with(ProfileActivity.this).load(imageUri).into(userImage);
+                    progressBar.setVisibility(View.GONE);
                 } else {
 
                 }
@@ -63,7 +66,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                // Xử lý lỗi nếu có
+                // Xử lý lỗi
             }
         });
 

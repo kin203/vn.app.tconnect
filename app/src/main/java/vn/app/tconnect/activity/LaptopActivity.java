@@ -1,6 +1,12 @@
 package vn.app.tconnect.activity;
 
+import static vn.app.tconnect.activity.MainActivity.redirectActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +32,7 @@ public class LaptopActivity extends AppCompatActivity {
     private LaptopAdapter laptopAdapter;
     private FirebaseFirestore db;
     RecyclerView lapTopRec;
+    TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,14 @@ public class LaptopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_laptop);
         db =FirebaseFirestore.getInstance();
         lapTopRec=findViewById(R.id.laptop_Rec);
+        back=findViewById(R.id.backbutton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(LaptopActivity.this, MainActivity.class);
+            }
+        });
 
         lapTopRec.setLayoutManager(new GridLayoutManager(this, 2));
         laptopModelList= new ArrayList<>();
@@ -55,5 +70,12 @@ public class LaptopActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(LaptopActivity.this, MainActivity.class));
+        finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

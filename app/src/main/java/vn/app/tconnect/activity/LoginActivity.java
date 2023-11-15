@@ -1,5 +1,7 @@
 package vn.app.tconnect.activity;
 
+import static vn.app.tconnect.activity.MainActivity.redirectActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -90,7 +92,7 @@ public class LoginActivity extends AppCompatActivity  {
 //                    database.getReference().child("Users").child(id).setValue(userModels);
 
                     Toast.makeText(LoginActivity.this,"Đăng Nhập thành công !!!" ,Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    redirectActivity(LoginActivity.this,MainActivity.class);
                 }else {
                     progressBar.setVisibility(View.GONE);
                     Toast.makeText(LoginActivity.this,"Lỗi "+ task.getException() ,Toast.LENGTH_SHORT).show();

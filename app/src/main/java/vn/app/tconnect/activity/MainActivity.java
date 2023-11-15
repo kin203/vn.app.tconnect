@@ -3,12 +3,10 @@ package vn.app.tconnect.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,7 +55,7 @@ public class MainActivity extends AppCompatActivity  {
     RecyclerView flashRec,recommendedRec;
     private FirebaseFirestore db;
     private FirebaseAuth auth;
-    private FirebaseUser user;
+    FirebaseUser user;
 
 
     @Override
@@ -67,7 +65,6 @@ public class MainActivity extends AppCompatActivity  {
         // ánh xạ id cho các biến giao diện
         auth=FirebaseAuth.getInstance();
         db =FirebaseFirestore.getInstance();
-        user=auth.getCurrentUser();
         flashRec=findViewById(R.id.pop_sale);
         recommendedRec= findViewById(R.id.pop_rcm_today);
         hello = findViewById(R.id.helloText);
@@ -84,9 +81,21 @@ public class MainActivity extends AppCompatActivity  {
         logout=findViewById(R.id.logout);
         progressBar =findViewById(R.id.progessbar);
         profile=findViewById(R.id.profile_btn);
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
         progressBar.setVisibility(View.VISIBLE);
 
+        if (user != null) {
+            // Lấy tên hiển thị của người dùng
+            String displayName = user.getDisplayName();
+
+            // Hiển thị thông báo chào mừng
+            if (displayName != null && !displayName.isEmpty()) {
+                hello.setText("Xin chào " + displayName + " !");
+            } else {
+                hello.setText("Xin chào");
+            }
+        }
 
         //Flash sale item
         flashRec.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
@@ -138,10 +147,12 @@ public class MainActivity extends AppCompatActivity  {
         //SlideImage
         ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
 
-        imageList.add(new SlideModel("https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/iphone-15-11-2023.jpg", ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/690-300-max-sliding-bluestone.jpg", ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/samsung-galaxy-s23-ultra-sliding-th111.png", ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel("https://cdn2.cellphones.com.vn/insecure/rs:fill:690:300/q:80/plain/https://dashboard.cellphones.com.vn/storage/pova-5-sliding-th111.jpg", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/08_Nov21e513fbe8a0a90ce9feb308c034544d.jpg",ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/07_Nov5d4ab481c6e8a490c59b70115429df91.jpg", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/01_Nova7004383d7438b8bdc521f1d0f5c0ac7.jpg", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/07_Nov4b48efae74e25ad429c0af61f6992af3.jpg", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/10_Nov930b99085b737f2ebff945eee2124796.jpg", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel("https://anphat.com.vn/media/banner/13_Nov44542b20d9e44fcf08b7fc979b831824.jpg", ScaleTypes.CENTER_CROP));
 
         ImageSlider imageSlider = findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
@@ -159,7 +170,7 @@ public class MainActivity extends AppCompatActivity  {
         monitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ManhinhActivity.class));
+                redirectActivity(MainActivity.this, ManhinhActivity.class);
             }
         });
         headset.setOnClickListener(new View.OnClickListener() {
@@ -209,5 +220,22 @@ public class MainActivity extends AppCompatActivity  {
     protected void onPause() {
         super.onPause();
         closeDrawer(drawerLayout);
+    }
+    private static final int BACK_PRESS_INTERVAL = 2000;
+    private long backPressTime = 0;
+
+    @Override
+    public void onBackPressed() {
+        if (backPressTime + BACK_PRESS_INTERVAL > System.currentTimeMillis()) {
+            // Nếu thời gian giữa 2 lần nhấn back nhỏ hơn BACK_PRESS_INTERVAL, thoát ứng dụng
+            super.onBackPressed();
+            finish();
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        } else {
+            // Nếu thời gian giữa 2 lần nhấn back lớn hơn BACK_PRESS_INTERVAL, reset lại thời gian
+            backPressTime = System.currentTimeMillis();
+            // Thông báo cho người dùng
+            Toast.makeText(this, "Nhấn back thêm lần nữa để thoát", Toast.LENGTH_SHORT).show();
+        }
     }
 }

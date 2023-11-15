@@ -1,9 +1,13 @@
 package vn.app.tconnect.activity;
 
+import static vn.app.tconnect.activity.MainActivity.redirectActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +34,7 @@ public class ManhinhActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     RecyclerView manHinhRec;
     ImageView home,noti,favorite,cart;
+    TextView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,14 @@ public class ManhinhActivity extends AppCompatActivity {
         favorite = findViewById(R.id.footer_favorite);
         cart= findViewById(R.id.footer_cart);
         manHinhRec=findViewById(R.id.manhinh_Rec);
+        back=findViewById(R.id.backbutton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectActivity(ManhinhActivity.this, MainActivity.class);
+            }
+        });
 
         manHinhRec.setLayoutManager(new GridLayoutManager(this, 2));
         manHinhModelList= new ArrayList<>();
@@ -91,5 +104,12 @@ public class ManhinhActivity extends AppCompatActivity {
                 startActivity(new Intent(ManhinhActivity.this,GiohangActivity.class));
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ManhinhActivity.this, MainActivity.class));
+        finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
