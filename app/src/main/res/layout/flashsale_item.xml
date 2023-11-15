@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="270dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    app:cardCornerRadius="15dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+        
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:id="@+id/pop_img"
+            app:riv_corner_radius="14dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/flashsale1"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/FS_name"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/pop_img"
+            android:layout_marginStart="5dp"
+            android:text="Màn hình Xiaomi Mi Desktop Monitor 27 inch"
+            android:textSize="12sp"
+            android:maxLines="1"
+
+            android:textColor="@color/red"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/FS_price"
+            android:layout_below="@id/FS_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:text="₫ 4.090.000"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

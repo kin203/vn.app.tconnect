@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">T Connect Mua Bán</string>
+    <string name="username_ho_c_email">Username hoặc email</string>
+    <string name="nh_p_username_ho_c_email">Nhập Username hoặc Email</string>
+    <string name="nh_p_m_t_kh_u">Nhập mật khẩu</string>
+    <string name="ch_a_c_t_i_kho_n_ng_k_ngay">Chưa có tài khoản? Đăng ký ngay</string>
+    <string name="m_t_kh_u">Mật khẩu</string>
+    <string name="open_nav">Navigation Drawer</string>
+    <string name="close_nav">Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="xin_ch_o_user">Xin chào, </string>
+    <string name="email">Nhập email</string>
+    <string name="inputID">Nhập tên người dùng</string>
+    <string name="inputName">Nhập họ tên</string>
+    <string name="already_have_account">Đã có tài khoản ? Đăng Nhập</string>
+    <string name="signUp_string">Đăng Ký</string>
+    <string name="flashsale">F⚡ASH SALE ⚡⚡</string>
+    <string name="rcm_today">Gợi ý hôm nay</string>
+    <string name="search">Tìm Kiếm</string>
+    <string name="logo">logo</string>
+    <string name="acc_setting">Cài đặt tài khoản</string>
+    <string name="personal_info">Thông tin cá nhân</string>
+</resources>

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "548315674670",
+    "firebase_url": "https://tconnect-1f9fe-default-rtdb.firebaseio.com",
+    "project_id": "tconnect-1f9fe",
+    "storage_bucket": "tconnect-1f9fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548315674670:android:b0547fb4654eb21e2a47bf",
+        "android_client_info": {
+          "package_name": "vn.app.tconnect"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7wHvoNw3MihAgXP3AY81uJjVy89KYbSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548315674670:android:3f32e2b81f1b44532a47bf",
+        "android_client_info": {
+          "package_name": "vn.tconnect.appbanhang"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7wHvoNw3MihAgXP3AY81uJjVy89KYbSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

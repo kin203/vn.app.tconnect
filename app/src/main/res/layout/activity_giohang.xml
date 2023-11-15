@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical"
+    tools:context=".activity.GiohangActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_main"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:background="#fff"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/txtGiohang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/baseline_arrow_back_24"
+                android:padding="10dp"
+                android:text="Giỏ hàng "
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/layout_giohang"
+            android:orientation="vertical">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+                        <RelativeLayout
+                            android:id="@+id/sp1"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:background="#fff">
+                            <ImageView
+                                android:id="@+id/anhgh1"
+                                android:layout_width="200dp"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="20dp"
+                                android:background="@color/common_google_signin_btn_text_dark"/>
+
+                            <RelativeLayout
+                                android:layout_width="30dp"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="30dp"
+                                android:layout_alignParentRight="true">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:clickable="true"
+                                    android:contentDescription="Clear icon"
+                                    android:drawableTop="@drawable/baseline_clear_24"
+                                    android:padding="20dp"
+                                    android:textSize="24dp" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ttsp1"
+                                android:layout_width="180dp"
+                                android:layout_height="126dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginRight="21dp"
+                                android:background="#fff"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tengh1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:text="MÀN HÌNH MSI"
+                                    android:textAlignment="center"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                    android:textSize="15sp"></TextView>
+
+                                <TextView
+                                    android:id="@+id/giagh1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/tengh1"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:text="4.499.000 VNĐ"
+                                    android:textColor="@color/black" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="center"
+                                    android:orientation="horizontal"
+                                    android:descendantFocusability="beforeDescendants">
+
+                                    <TextView
+                                        android:id="@+id/txtSL"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="SL "
+                                        android:textColor="@color/black" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/addsl_icon" />
+
+                                    <EditText
+                                        android:layout_width="30sp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="5sp"
+                                        tools:ignore="TouchTargetSizeCheck" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:clickable="true"
+                                        android:drawableLeft="@drawable/removesl_icon"
+                                        tools:ignore="TouchTargetSizeCheck" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/checkBox1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="1dp"
+                                android:layout_marginTop="40dp"
+                                android:layout_marginBottom="95dp" />
+                        </RelativeLayout>
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp">
+                            <RelativeLayout
+                                android:id="@+id/sp2"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                android:layout_marginLeft="0dp"
+                                android:layout_marginTop="0dp"
+                                android:background="#fff">
+                                <ImageView
+                                    android:id="@+id/anhgh2"
+                                    android:layout_width="200dp"
+                                    android:layout_height="220dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@color/search"/>
+                                <RelativeLayout
+                                    android:layout_width="30dp"
+                                    android:layout_height="80dp"
+                                    android:layout_marginTop="30dp"
+                                    android:layout_alignParentRight="true">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:clickable="true"
+                                        android:contentDescription="Clear icon"
+                                        android:drawableTop="@drawable/baseline_clear_24"
+                                        android:padding="20dp"
+                                        android:textSize="24dp" />
+                                </RelativeLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ttsp2"
+                                    android:layout_width="180dp"
+                                    android:layout_height="126dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="50dp"
+                                    android:layout_marginRight="21dp"
+                                    android:background="#fff"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tengh2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:text="MÀN HÌNH MSI"
+                                        android:textAlignment="center"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                        android:textSize="15sp"></TextView>
+
+                                    <TextView
+                                        android:id="@+id/giagh2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/tengh2"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="5dp"
+                                        android:text="4.499.000 VNĐ"
+                                        android:textColor="@color/black" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_gravity="center"
+                                        android:orientation="horizontal"
+                                        android:descendantFocusability="beforeDescendants">
+
+                                        <TextView
+                                            android:id="@+id/txtSL2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:text="SL "
+                                            android:textColor="@color/black" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:drawableLeft="@drawable/addsl_icon" />
+
+                                        <EditText
+                                            android:layout_width="30sp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="5sp"/>
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:clickable="true"
+                                            android:drawableLeft="@drawable/removesl_icon" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <CheckBox
+                                    android:id="@+id/checkBox2"
+                                    android:layout_width="50dp"
+                                    android:layout_height="50dp"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginStart="1dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_marginBottom="95dp" />
+                            </RelativeLayout>
+                        </FrameLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp">
+                                <RelativeLayout
+                                    android:id="@+id/sp3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="180dp"
+                                    android:layout_marginLeft="0dp"
+                                    android:layout_marginTop="0dp"
+                                    android:background="#fff">
+                                    <ImageView
+                                        android:id="@+id/anhgh3"
+                                        android:layout_width="200dp"
+                                        android:layout_height="220dp"
+                                        android:layout_marginLeft="20dp"
+                                        android:background="@color/common_google_signin_btn_text_dark"/>
+                                    <RelativeLayout
+                                        android:layout_width="30dp"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="30dp"
+                                        android:layout_alignParentRight="true">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:clickable="true"
+                                            android:contentDescription="Clear icon"
+                                            android:drawableTop="@drawable/baseline_clear_24"
+                                            android:padding="20dp"
+                                            android:textSize="24dp" />
+                                    </RelativeLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/ttsp3"
+                                        android:layout_width="180dp"
+                                        android:layout_height="126dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="50dp"
+                                        android:layout_marginRight="21dp"
+                                        android:background="#fff"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tengh3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:text="MÀN HÌNH MSI"
+                                            android:textAlignment="center"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textSize="15sp"></TextView>
+
+                                        <TextView
+                                            android:id="@+id/giagh3"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@id/tengh3"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:text="4.499.000 VNĐ"
+                                            android:textColor="@color/black" />
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="40dp"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_gravity="center"
+                                            android:orientation="horizontal"
+                                            android:descendantFocusability="beforeDescendants">
+
+                                            <TextView
+                                                android:id="@+id/txtSL3"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:text="SL "
+                                                android:textColor="@color/black" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:clickable="true"
+                                                android:drawableLeft="@drawable/addsl_icon" />
+
+                                            <EditText
+                                                android:layout_width="30sp"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="5sp"
+                                                tools:ignore="TouchTargetSizeCheck" />
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:clickable="true"
+                                                android:drawableLeft="@drawable/removesl_icon"
+                                                tools:ignore="TouchTargetSizeCheck" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <CheckBox
+                                        android:id="@+id/checkBox3"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginStart="1dp"
+                                        android:layout_marginTop="40dp"
+                                        android:layout_marginBottom="95dp"
+                                        tools:ignore="TouchTargetSizeCheck" />
+                                </RelativeLayout>
+                            </FrameLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp">
+                                    <RelativeLayout
+                                        android:id="@+id/sp4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:background="#fff">
+                                        <ImageView
+                                            android:id="@+id/anhgh4"
+                                            android:layout_width="200dp"
+                                            android:layout_height="220dp"
+                                            android:layout_marginLeft="20dp"
+                                            android:background="@color/lavender"/>
+                                        <RelativeLayout
+                                            android:layout_width="30dp"
+                                            android:layout_height="80dp"
+                                            android:layout_marginTop="30dp"
+                                            android:layout_alignParentRight="true">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:clickable="true"
+                                                android:contentDescription="Clear icon"
+                                                android:drawableTop="@drawable/baseline_clear_24"
+                                                android:padding="20dp"
+                                                android:textSize="24dp" />
+                                        </RelativeLayout>
+
+                                        <LinearLayout
+                                            android:id="@+id/ttsp4"
+                                            android:layout_width="180dp"
+                                            android:layout_height="126dp"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="50dp"
+                                            android:layout_marginRight="21dp"
+                                            android:background="#fff"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:id="@+id/tengh4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="10dp"
+                                                android:text="MÀN HÌNH MSI"
+                                                android:textAlignment="center"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                                android:textSize="15sp"></TextView>
+
+                                            <TextView
+                                                android:id="@+id/giagh4"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@id/tengh4"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="5dp"
+                                                android:text="4.499.000 VNĐ"
+                                                android:textColor="@color/black" />
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="40dp"
+                                                android:layout_alignParentRight="true"
+                                                android:layout_gravity="center"
+                                                android:orientation="horizontal"
+                                                android:descendantFocusability="beforeDescendants">
+
+                                                <TextView
+                                                    android:id="@+id/txtSL4"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="10dp"
+                                                    android:layout_marginTop="5dp"
+                                                    android:text="SL "
+                                                    android:textColor="@color/black" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:clickable="true"
+                                                    android:drawableLeft="@drawable/addsl_icon" />
+
+                                                <EditText
+                                                    android:layout_width="30sp"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_marginLeft="5sp"
+                                                    tools:ignore="TouchTargetSizeCheck" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:clickable="true"
+                                                    android:drawableLeft="@drawable/removesl_icon"
+                                                    tools:ignore="TouchTargetSizeCheck" />
+                                            </LinearLayout>
+                                        </LinearLayout>
+                                        <CheckBox
+                                            android:id="@+id/checkBox4"
+                                            android:layout_width="50dp"
+                                            android:layout_height="50dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_alignParentBottom="true"
+                                            android:layout_marginStart="1dp"
+                                            android:layout_marginTop="40dp"
+                                            android:layout_marginBottom="95dp" />
+                                    </RelativeLayout>
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#346C6B6B"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/tongtien1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tổng tiền : "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginLeft="120dp"/>
+            <Button
+                android:id="@+id/btmua"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cus_btn"
+                android:text="MUA NGAY"
+                android:layout_marginLeft="70sp"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
